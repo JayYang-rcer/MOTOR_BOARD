@@ -1,7 +1,7 @@
 #include "rm_motor.h"
 
-MOTOR_REAL_INFO     MOTO_REAL_INFO[8];
-PID_Data MOTOR_PID_RPM[8];
+MOTOR_REAL_INFO     MOTO_REAL_INFO[8] = {o};
+PID_Data MOTOR_PID_RPM[8] ;
 PID_Data MOTOR_PID_POS[8];	//位置pid信息
 
 /**
