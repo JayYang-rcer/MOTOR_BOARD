@@ -1,8 +1,8 @@
 #include "rm_motor.h"
 
 MOTOR_REAL_INFO     MOTO_REAL_INFO[8] = {o};
-PID_Data MOTOR_PID_RPM[8] ;
-PID_Data MOTOR_PID_POS[8];	//位置pid信息
+PID_Data MOTOR_PID_RPM[8] = {0};
+PID_Data MOTOR_PID_POS[8] = {0};	//位置pid信息
 
 /**
  * @brief 发送电机数据,使用can总线控制大疆电机。3508和2006的can id设置是一样的，而且一条can指令最多可以控制8个电机（标识符0x200: 201 202 203 204, 标识符0x1FF: 205 206 207 208）
