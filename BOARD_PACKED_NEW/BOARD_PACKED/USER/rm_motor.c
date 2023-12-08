@@ -357,7 +357,6 @@ void get_motor_measure(CAN_RxHeaderTypeDef *msg, uint8_t Data[8])
 float volatile Deceleration_P = 19.0f;	//电机减速比，默认3508电机
 void RM_MOTOR_Angle_Integral(MOTOR_REAL_INFO* RM_MOTOR)
 {
-	static uint8_t first_flag = 1;
 	float delta_pos = 0.f;		//当前电机轴角度
 
 	//记录第一次进入时的数据
@@ -385,14 +384,6 @@ void RM_MOTOR_Angle_Integral(MOTOR_REAL_INFO* RM_MOTOR)
 		default:
 			break;
 	}	
-	
-	// 记录第一次进入时的数据
-	if(first_flag)
-	{
-		RM_MOTOR->LAST_ANGLE = RM_MOTOR->ANGLE;
-		first_flag = 0;
-		return;
-	}
 	
 	// 计算变化的角度
 	if(RM_MOTOR->RPM == 0)
